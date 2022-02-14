@@ -6,5 +6,6 @@ import (
 )
 
 func main() {
-	plugin.Serve(&plugin.ServeOpts{PluginFunc: algolia.Plugin})
+	plugin.Serve(&plugin.ServeOpts{
+		PluginFunc: algolia.Plugin})
 }
