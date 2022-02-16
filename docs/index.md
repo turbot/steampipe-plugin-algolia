@@ -17,6 +17,7 @@ og_image: "/images/plugins/turbot/algolia-social-graphic.png"
 [Algolia](https://algolia.com) provides search as a service, offering web search across a client's website using an externally hosted search engine.
 
 For example:
+
 ```sql
 select
   rank,
@@ -27,7 +28,7 @@ where
   index = 'offices'
   and query = 'usa'
 order by
-  rank
+  rank;
 ```
 
 ```
@@ -71,4 +72,4 @@ connection "algolia" {
 ## Get involved
 
 * Open source: https://github.com/turbot/steampipe-plugin-algolia
-* Community: [Discussion forums](https://github.com/turbot/steampipe/discussions)
+* Community: [Slack Channel](https://steampipe.io/community/join)

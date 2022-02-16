@@ -6,14 +6,21 @@ Use SQL to query indexes and metadata from Algolia.
 
 * **[Get started →](https://hub.steampipe.io/plugins/turbot/algolia)**
 * Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/algolia/tables)
-* Community: [Discussion forums](https://github.com/turbot/steampipe/discussions)
+* Community: [Slack Channel](https://steampipe.io/community/join)
 * Get involved: [Issues](https://github.com/turbot/steampipe-plugin-algolia/issues)
 
 ## Quick start
 
 Install the plugin with [Steampipe](https://steampipe.io):
+
 ```shell
 steampipe plugin install algolia
+```
+
+Run steampipe:
+
+```shell
+steampipe query
 ```
 
 Run a query:
@@ -27,12 +34,22 @@ where
   index = 'offices'
   and query = 'usa'
 order by
-  rank
+  rank;
+```
+
+```
++------+---------------------------------------------------------+
+| rank | hit                                                     |
++------+---------------------------------------------------------+
+| 1    | { "name": "Scranton", "state": "PA", "country": "USA" } |
+| 2    | { "name": "Stamford", "state": "CT", "country": "USA" } |
++------+---------------------------------------------------------+
 ```
 
 ## Developing
 
 Prerequisites:
+
 - [Steampipe](https://steampipe.io/downloads)
 - [Golang](https://golang.org/doc/install)
 
@@ -44,17 +61,20 @@ cd steampipe-plugin-algolia
 ```
 
 Build, which automatically installs the new version to your `~/.steampipe/plugins` directory:
+
 ```
 make
 ```
 
 Configure the plugin:
+
 ```
 cp config/* ~/.steampipe/config
 vi ~/.steampipe/config/algolia.spc
 ```
 
 Try it!
+
 ```
 steampipe query
 > .inspect algolia
