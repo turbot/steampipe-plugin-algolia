@@ -11,8 +11,8 @@ import (
 
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/search"
 
-	"github.com/turbot/steampipe-plugin-sdk/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
 )
 
 func connect(_ context.Context, d *plugin.QueryData) (*search.Client, error) {
