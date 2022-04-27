@@ -7,7 +7,6 @@ import (
 	"net/url"
 	"os"
 	"strings"
-	"time"
 
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/search"
 
@@ -29,13 +28,12 @@ func connect(_ context.Context, d *plugin.QueryData) (*search.Client, error) {
 
 	// But prefer the config
 	algoliaConfig := GetConfig(d.Connection)
-	if &algoliaConfig != nil {
-		if algoliaConfig.AppID != nil {
-			appID = *algoliaConfig.AppID
-		}
-		if algoliaConfig.APIKey != nil {
-			apiKey = *algoliaConfig.APIKey
-		}
+
+	if algoliaConfig.AppID != nil {
+		appID = *algoliaConfig.AppID
+	}
+	if algoliaConfig.APIKey != nil {
+		apiKey = *algoliaConfig.APIKey
 	}
 
 	if appID == "" || apiKey == "" {
@@ -51,14 +49,16 @@ func connect(_ context.Context, d *plugin.QueryData) (*search.Client, error) {
 	return conn, nil
 }
 
-func unixTimestampToDateTime(_ context.Context, d *transform.TransformData) (interface{}, error) {
-	i := int64(d.Value.(int))
-	if i == 0 {
-		return nil, nil
-	}
-	ts := time.Unix(i, 0)
-	return ts, nil
-}
+// Commenting out the function below since it is not used at present. There is a possibility for future usage.
+
+// func unixTimestampToDateTime(_ context.Context, d *transform.TransformData) (interface{}, error) {
+// 	i := int64(d.Value.(int))
+// 	if i == 0 {
+// 		return nil, nil
+// 	}
+// 	ts := time.Unix(i, 0)
+// 	return ts, nil
+// }
 
 func queryParamsToJSON(_ context.Context, d *transform.TransformData) (interface{}, error) {
 	q := d.Value.(string)
