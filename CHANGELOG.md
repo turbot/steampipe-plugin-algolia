@@ -1,3 +1,14 @@
+## v0.2.0 [2022-09-28]
+
+_Bug fixes_
+
+- Fixed the link to Algolia app/API settings page in `docs/index.md` file. ([#7](https://github.com/turbot/steampipe-plugin-algolia/pull/7))
+
+_Dependencies_
+
+- Recompiled plugin with [steampipe-plugin-sdk v4.1.7](https://github.com/turbot/steampipe-plugin-sdk/blob/main/CHANGELOG.md#v417-2022-09-08) which includes several caching and memory management improvements. ([#8](https://github.com/turbot/steampipe-plugin-algolia/pull/8))
+- Recompiled plugin with Go version `1.19`. ([#8](https://github.com/turbot/steampipe-plugin-algolia/pull/8))
+
 ## v0.1.0 [2022-04-27]
 
 _Enhancements_
