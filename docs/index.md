@@ -66,8 +66,8 @@ connection "algolia" {
 }
 ```
 
-* `app_id` - Unique application ID, available in your [Algolia settings](https://algolia.io/settings/edit).
-* `api_key` - API key, available in your [Algolia settings](https://algolia.io/settings/edit).
+* `app_id` - Unique application ID, available in your [Algolia settings](https://www.algolia.com/account/api-keys).
+* `api_key` - API key, available in your [Algolia settings](https://www.algolia.com/account/api-keys).
 
 ## Get involved
 
