@@ -1,10 +1,10 @@
 module github.com/turbot/steampipe-plugin-algolia
 
-go 1.18
+go 1.19
 
 require (
 	github.com/algolia/algoliasearch-client-go/v3 v3.23.0
-	github.com/turbot/steampipe-plugin-sdk/v3 v3.3.1
+	github.com/turbot/steampipe-plugin-sdk/v4 v3.3.1
 )
 
 require (
