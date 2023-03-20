@@ -3,9 +3,9 @@ package algolia
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableAlgoliaAPIKey(ctx context.Context) *plugin.Table {
@@ -53,7 +53,7 @@ func listAPIKey(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 }
 
 func getAPIKey(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
-	key := d.KeyColumnQuals["key"].GetStringValue()
+	key := d.EqualsQuals["key"].GetStringValue()
 	conn, err := connect(ctx, d)
 	if err != nil {
 		return nil, err
