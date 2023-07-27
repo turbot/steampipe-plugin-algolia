@@ -6,7 +6,7 @@ Use SQL to query indexes and metadata from Algolia.
 
 * **[Get started →](https://hub.steampipe.io/plugins/turbot/algolia)**
 * Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/algolia/tables)
-* Community: [Slack Channel](https://steampipe.io/community/join)
+* Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
 * Get involved: [Issues](https://github.com/turbot/steampipe-plugin-algolia/issues)
 
 ## Quick start
