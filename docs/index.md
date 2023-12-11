@@ -8,6 +8,7 @@ name: algolia
 description: Steampipe plugin for querying Algolia indexes, logs and more.
 og_description: Query Algolia with SQL! Open source CLI. No DB required.
 og_image: "/images/plugins/turbot/algolia-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"]
 ---
 
 # Algolia + Steampipe
