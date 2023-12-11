@@ -70,7 +70,4 @@ connection "algolia" {
 * `app_id` - Unique application ID, available in your [Algolia settings](https://www.algolia.com/account/api-keys).
 * `api_key` - API key, available in your [Algolia settings](https://www.algolia.com/account/api-keys).
 
-## Get involved
 
-* Open source: https://github.com/turbot/steampipe-plugin-algolia
-* Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
