@@ -8,11 +8,12 @@ name: algolia
 description: Steampipe plugin for querying Algolia indexes, logs and more.
 og_description: Query Algolia with SQL! Open source CLI. No DB required.
 og_image: "/images/plugins/turbot/algolia-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"]
 ---
 
 # Algolia + Steampipe
 
-[Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
+[Steampipe](https://steampipe.io) is an open-source zero-ETL engine to instantly query cloud APIs using SQL.
 
 [Algolia](https://algolia.com) provides search as a service, offering web search across a client's website using an externally hosted search engine.
 
@@ -69,7 +70,4 @@ connection "algolia" {
 * `app_id` - Unique application ID, available in your [Algolia settings](https://www.algolia.com/account/api-keys).
 * `api_key` - API key, available in your [Algolia settings](https://www.algolia.com/account/api-keys).
 
-## Get involved
 
-* Open source: https://github.com/turbot/steampipe-plugin-algolia
-* Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
