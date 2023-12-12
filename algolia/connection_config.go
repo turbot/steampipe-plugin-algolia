@@ -2,21 +2,11 @@ package algolia
 
 import (
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/schema"
 )
 
 type algoliaConfig struct {
-	AppID  *string `cty:"app_id"`
-	APIKey *string `cty:"api_key"`
-}
-
-var ConfigSchema = map[string]*schema.Attribute{
-	"app_id": {
-		Type: schema.TypeString,
-	},
-	"api_key": {
-		Type: schema.TypeString,
-	},
+	AppID  *string `hcl:"app_id"`
+	APIKey *string `hcl:"api_key"`
 }
 
 func ConfigInstance() interface{} {
