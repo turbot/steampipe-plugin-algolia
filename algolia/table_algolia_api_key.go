@@ -19,7 +19,7 @@ func tableAlgoliaAPIKey(ctx context.Context) *plugin.Table {
 			KeyColumns: plugin.SingleColumn("key"),
 			Hydrate:    getAPIKey,
 		},
-		Columns: []*plugin.Column{
+		Columns: commonColumns([]*plugin.Column{
 			// Top columns
 			{Name: "key", Type: proto.ColumnType_STRING, Transform: transform.FromField("Value"), Description: "API key value."},
 			// Other columns
@@ -33,7 +33,7 @@ func tableAlgoliaAPIKey(ctx context.Context) *plugin.Table {
 			{Name: "query_parameters", Type: proto.ColumnType_STRING, Description: "Parameters added to all searches with this key."},
 			{Name: "referers", Type: proto.ColumnType_JSON},
 			{Name: "validity", Type: proto.ColumnType_TIMESTAMP, Description: "Timestamp of the date at which the key expires. (0 means it will not expire automatically)."},
-		},
+		}),
 	}
 }
 

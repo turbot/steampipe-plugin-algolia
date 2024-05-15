@@ -17,7 +17,7 @@ func tableAlgoliaIndex(ctx context.Context) *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listIndex,
 		},
-		Columns: []*plugin.Column{
+		Columns: commonColumns([]*plugin.Column{
 
 			// Top columns
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Index name."},
@@ -34,7 +34,7 @@ func tableAlgoliaIndex(ctx context.Context) *plugin.Table {
 			{Name: "primary", Type: proto.ColumnType_STRING, Description: "Only present if the index is a replica. Contains the name of the related primary index."},
 			{Name: "replicas", Type: proto.ColumnType_JSON, Description: "Only present if the index is a primary index with replicas. Contains the names of all linked replicas."},
 			{Name: "settings", Type: proto.ColumnType_JSON, Hydrate: getIndexSettings, Transform: transform.FromValue(), Description: "Index settings."},
-		},
+		}),
 	}
 }
 

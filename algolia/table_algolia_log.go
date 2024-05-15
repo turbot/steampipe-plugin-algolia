@@ -22,7 +22,7 @@ func tableAlgoliaLog(ctx context.Context) *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listLog,
 		},
-		Columns: []*plugin.Column{
+		Columns: commonColumns([]*plugin.Column{
 			// Top columns
 			{Name: "timestamp", Type: proto.ColumnType_TIMESTAMP, Description: "Time when the log entry was created."},
 			{Name: "ip", Type: proto.ColumnType_IPADDR, Transform: transform.FromField("IP"), Description: "IP address of the request client."},
@@ -40,7 +40,7 @@ func tableAlgoliaLog(ctx context.Context) *plugin.Table {
 			{Name: "query_number_hits", Type: proto.ColumnType_INT, Transform: transform.FromField("QueryNbHits"), Description: "Number of hits returned for the query."},
 			{Name: "sha1", Type: proto.ColumnType_STRING, Transform: transform.FromField("SHA1"), Description: "SHA1 ID of the log entry."},
 			{Name: "url", Type: proto.ColumnType_STRING, Transform: transform.FromField("URL"), Description: "URL of the query request."},
-		},
+		}),
 	}
 }
 
