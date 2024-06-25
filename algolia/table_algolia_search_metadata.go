@@ -23,7 +23,7 @@ func tableAlgoliaSearchMetadata(ctx context.Context) *plugin.Table {
 				{Name: "query", Require: plugin.Optional},
 			},
 		},
-		Columns: []*plugin.Column{
+		Columns: commonColumns([]*plugin.Column{
 			// Top columns
 			{Name: "index", Type: proto.ColumnType_STRING, Description: "Name of the index for the search result."},
 			{Name: "num_hits", Type: proto.ColumnType_INT, Transform: transform.FromField("Result.NbHits"), Description: "The number of hits matched by the query."},
@@ -55,7 +55,7 @@ func tableAlgoliaSearchMetadata(ctx context.Context) *plugin.Table {
 			// Deprecated - {Name: "timeout_counts", Type: proto.ColumnType_BOOL},
 			// Deprecated - {Name: "timeout_hits", Type: proto.ColumnType_BOOL},
 			{Name: "user_data", Type: proto.ColumnType_JSON, Transform: transform.FromField("Result.UserData"), Description: "User data results from the search."},
-		},
+		}),
 	}
 }
 

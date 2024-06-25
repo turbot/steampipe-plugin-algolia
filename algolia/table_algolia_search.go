@@ -23,7 +23,7 @@ func tableAlgoliaSearch(ctx context.Context) *plugin.Table {
 				{Name: "query", Require: plugin.Optional},
 			},
 		},
-		Columns: []*plugin.Column{
+		Columns: commonColumns([]*plugin.Column{
 			// Top columns
 			{Name: "index", Type: proto.ColumnType_STRING, Description: "Name of the index for the search result."},
 			{Name: "rank", Type: proto.ColumnType_INT, Description: "Rank (position) of the search result. The top result is number 1."},
@@ -34,7 +34,7 @@ func tableAlgoliaSearch(ctx context.Context) *plugin.Table {
 			{Name: "query", Type: proto.ColumnType_STRING, Transform: transform.FromQual("query"), Description: "Query used to obtain the search result."},
 			{Name: "ranking_info", Type: proto.ColumnType_JSON, Description: "Ranking information for the search result."},
 			{Name: "snippet_result", Type: proto.ColumnType_JSON, Description: "Snippet information."},
-		},
+		}),
 	}
 }
 
