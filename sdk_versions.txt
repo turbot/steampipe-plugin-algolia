@@ -1,0 +1,2 @@
+steampipe-plugin-algolia: v5.10.1
+steampipe-plugin-algolia: v5.10.1
