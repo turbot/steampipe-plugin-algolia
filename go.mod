@@ -5,7 +5,7 @@ go 1.24
 toolchain go1.24.1
 
 require (
-	github.com/algolia/algoliasearch-client-go/v3 v3.23.0
+	github.com/algolia/algoliasearch-client-go/v3 v3.32.1
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.13.1
 )
 
