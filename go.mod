@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/algolia/algoliasearch-client-go/v3 v3.23.0
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.14.0
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.14.1
 )
 
 require (
