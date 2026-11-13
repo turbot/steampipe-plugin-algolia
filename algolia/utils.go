@@ -10,15 +10,15 @@ import (
 
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/search"
 
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin/transform"
 )
 
-func connect(_ context.Context, d *plugin.QueryData) (*search.Client, error) {
+func connect(ctx context.Context, d *plugin.QueryData) (*search.Client, error) {
 
 	// Load connection from cache, which preserves throttling protection etc
 	cacheKey := "algolia"
-	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
+	if cachedData, ok := d.ConnectionCache.Get(ctx, cacheKey); ok {
 		return cachedData.(*search.Client), nil
 	}
 
@@ -44,7 +44,7 @@ func connect(_ context.Context, d *plugin.QueryData) (*search.Client, error) {
 	conn := search.NewClient(appID, apiKey)
 
 	// Save to cache
-	d.ConnectionManager.Cache.Set(cacheKey, conn)
+	_ = d.ConnectionCache.Set(ctx, cacheKey, conn)
 
 	return conn, nil
 }
@@ -73,6 +73,6 @@ func queryParamsToJSON(_ context.Context, d *transform.TransformData) (interface
 	return string(js), nil
 }
 
-func isNotFoundError(err error) bool {
+func isNotFoundError(_ context.Context, _ *plugin.QueryData, _ *plugin.HydrateData, err error) bool {
 	return strings.Contains(err.Error(), "Algolia API error [404]")
 }
